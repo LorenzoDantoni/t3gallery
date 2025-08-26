@@ -1,12 +1,12 @@
-# T3 Gallery 
+# T3 Gallery 
 
-## TODO
+## TODO
 
 - [x] Make it deploy (w/ vercel)
 - [x] Scaffold basic ui with mock data
 - [x] Tidy up build process
-- [ ] Actually set up a database (w/ vercel postgres)
-- [ ] Attach database to UI
+- [x] Actually set up a database (w/ vercel postgres)
+- [x] Attach database to UI
 - [ ] Add authentication (w/ clerk)
 - [ ] Add image upload
 - [ ] Error management (w/ Sentry)

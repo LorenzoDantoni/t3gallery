@@ -11,6 +11,13 @@ const config = {
   },
   eslint: {
     ignoreDuringBuilds: true
+  },
+  images: {
+    remotePatterns: [
+      {
+        hostname: 'ftluvimrni.ufs.sh',
+      }
+    ]
   }
 };
 

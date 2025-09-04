@@ -2,7 +2,6 @@ import "~/styles/globals.css";
 import "@uploadthing/react/styles.css";
 
 import { type Metadata } from "next";
-import { Geist } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import { TopNav } from "~/app/_components/topnav";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
@@ -15,11 +14,6 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-const geist = Geist({
-  subsets: ["latin"],
-  variable: "--font-geist-sans",
-});
-
 export default function RootLayout({
   children,
   modal,
@@ -29,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang="en" className={`${geist.variable}`}>
+      <html lang="en">
         <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
         <body className="flex flex-col gap-4">
           <TopNav />

@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useUploadThing } from "~/utils/uploadthings";
-// import { toast } from "sonner";
+import { toast } from "sonner";
 // import { usePostHog } from "posthog-js/react";
 
 // inferred input off useUploadThing
@@ -103,8 +103,17 @@ export function SimpleUploadButton() {
   // });
 
   const { inputProps } = useUploadThingInputProps("imageUploader", {
+    onUploadBegin() {
+      toast("Uploading...", {
+        duration: 100000,
+        id: "upload-begin",
+      });
+    },
+
     onClientUploadComplete() {
-      router.refresh()
+      toast.dismiss("upload-begin");
+      toast("Upload complete!");
+      router.refresh();
     },
   });
 

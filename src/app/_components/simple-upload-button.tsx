@@ -77,7 +77,7 @@ export function SimpleUploadButton() {
 
   const { inputProps } = useUploadThingInputProps("imageUploader", {
     onUploadBegin() {
-      posthog.capture("upload_begin");
+      posthog.capture("upload begin");
       toast(
         <div className="flex items-center gap-2 text-white">
           <LoadingSpinnerSVG />
@@ -85,17 +85,17 @@ export function SimpleUploadButton() {
         </div>,
         {
           duration: 100000,
-          id: "upload-begin",
+          id: "upload begin",
         },
       );
     },
     onUploadError(error) {
-      posthog.capture("upload_error", { error });
-      toast.dismiss("upload-begin");
-      toast.error("Upload failed");
+      posthog.capture("upload error", { error });
+      toast.dismiss("upload begin");
+      toast.error("upload failed");
     },
     onClientUploadComplete() {
-      toast.dismiss("upload-begin");
+      toast.dismiss("upload begin");
       toast("Upload complete!");
       router.refresh();
     },

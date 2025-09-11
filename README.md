@@ -1,5 +1,14 @@
 # T3 Gallery 
 
+Services used:
+- vercel (deployment)
+- posthog (analytics)
+- upstash (ratelimiter)
+- clerk (authentication)
+- sentry (error tracking)
+- uploadthing (file uploads)
+- drizzle (headless typescript ORM)
+
 ## TODO
 
 - [x] Make it deploy (w/ vercel)
@@ -17,3 +26,9 @@
 - [x] Analytics (posthog)
 - [x] Delete button (w/ Server Actions)
 - [x] Ratelimiting (upstash)
+
+TODO:
+- [ ] Fix page layout for images of different resolutions
+- [ ] "Selecting" images on the gallery page (Zustand for state management)
+- [ ] "Infinite scroll", as you scroll more images get shown
+- [ ] Folders/albums
